@@ -9,11 +9,11 @@ export interface BoxProps {
 }
 
 function isCorrectColourName(input: string): boolean {
-  let res =
+  return (
     Constants.CSS_COLOUR_NAMES.findIndex(
       (name) => input.toLowerCase() === name.toLowerCase()
-    ) > -1;
-  return res;
+    ) > -1
+  );
 }
 
 const MyBox: FC<BoxProps> = ({ currentColour, addColour }) => {
