@@ -23,8 +23,12 @@ function App() {
         {isBoxVisible ? "Hide" : "Show"}
       </Button>
 
-      {colours.map((colour) => (
-        <Button variant="outlined" onClick={() => setMyColour(colour)}>
+      {colours.map((colour, idx) => (
+        <Button
+          key={colour + "-" + idx + "-button"}
+          variant="outlined"
+          onClick={() => setMyColour(colour)}
+        >
           {colour}
         </Button>
       ))}
