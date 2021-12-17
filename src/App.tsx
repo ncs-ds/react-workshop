@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import MyBox from "./MyBox";
 import ColourNarrative from "./ColourNarrative";
+import UserList from "./UserList";
 
 function App() {
   const [myColour, setMyColour] = useState<string>("red");
@@ -36,6 +37,8 @@ function App() {
         <MyBox currentColour={myColour} addColour={addColourChangeHandler} />
       )}
       <ColourNarrative colour={myColour} />
+      <p></p>
+      <UserList colour={myColour} />
     </>
   );
 }
