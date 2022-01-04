@@ -17,28 +17,30 @@ function App() {
 
   return (
     <>
-      <Button
-        variant="outlined"
-        onClick={() => setIsBoxVisible((oldValue) => !oldValue)}
-      >
-        {isBoxVisible ? "Hide" : "Show"}
-      </Button>
-
-      {colours.map((colour, idx) => (
+      <div className="myApp">
         <Button
-          key={colour + "-" + idx + "-button"}
           variant="outlined"
-          onClick={() => setMyColour(colour)}
+          onClick={() => setIsBoxVisible((oldValue) => !oldValue)}
         >
-          {colour}
+          {isBoxVisible ? "Hide" : "Show"}
         </Button>
-      ))}
-      {isBoxVisible && (
-        <MyBox currentColour={myColour} addColour={addColourChangeHandler} />
-      )}
-      <ColourNarrative colour={myColour} />
-      <p></p>
-      <UserList colour={myColour} />
+
+        {colours.map((colour, idx) => (
+          <Button
+            key={colour + "-" + idx + "-button"}
+            variant="outlined"
+            onClick={() => setMyColour(colour)}
+          >
+            {colour}
+          </Button>
+        ))}
+        {isBoxVisible && (
+          <MyBox currentColour={myColour} addColour={addColourChangeHandler} />
+        )}
+        <ColourNarrative colour={myColour} />
+        <p></p>
+        <UserList colour={myColour} />
+      </div>
     </>
   );
 }
